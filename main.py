@@ -22,9 +22,9 @@ def guardar():
     #tupla que almacena los values de los entrys disparos 1, 2 y 3.
     disparos = (float(entry_Disparo1.get()), float(entry_Disparo2.get()), float(entry_Disparo3.get()))
     #llama a la función mejor_disparo en el módulo calculos.py y retorna el mejor disparo del participante.
-    mejor_disparo = mejor_disparo(disparos)
+    mejor_disparo = mejorDisparo(disparos)
     #llama a la función promedio_disparo en el módulo calculos.py y retorna el promedio de los 3 disparos del participante.
-    promedio_disparo = promedio_disparo(disparos)   
+    promedio_disparo = promedioDisparo(disparos)   
 
     #almaceno en variables los entrys de cada participante.
     numero_id = random.randrange(0,999)
@@ -49,7 +49,6 @@ def guardar():
 def participantes_csv():
     #guardo los participantes ordenados
     participantes_ordenados = sorted(participantes, key=itemgetter(8))
-    print(participantes_ordenados)
     # abro el csv en modo w+ 
     file = open('guardar_participantes.csv', 'w+', newline ='')     
     # escribo la data en el archivo 
